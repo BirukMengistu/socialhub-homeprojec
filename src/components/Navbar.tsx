@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Icons } from './Icons'
 import NavItems from './NavItems'
 import { buttonVariants } from './ui/button'
+import Cart from './Cart'
 
 const Navbar = () => {
   const user =null
@@ -24,27 +25,26 @@ const Navbar = () => {
               </div>
               <div>
               {
-                user?<p></p>:(
-                  <Link 
-                  
-                  href='/signup'  className={
-                    buttonVariants({
-                      variant:'outline'
-                    })
-                  }>
-                    Create Account
-                  </Link>
-                  
-                )
+                user?
+                <span 
+                   className='h-6 w-px bg-gray-200 '/>:
+                   null
               }
                {
                 user?null:(
-                  <span  className='h-6 w-px bg-gray-200 '/>
+                  <div>
+                 <span aria-hidden='true'
+                   className='h-6 w-px bg-gray-200 '/>
+                  </div>
+                 
                   
                 )
               }
+               <div className='ml-4 flow-root lg:ml-6'>
+                <Cart/>
+               </div>
               </div>
-            
+              
             </div>
            </div>
          </MaxwidthWrapper>
